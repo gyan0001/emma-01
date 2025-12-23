@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Katja - Content Creator & Lifestyle Influencer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c2c2c;
+            --secondary: #fafafa;
+            --accent: #ff6b9d;
+            --accent-light: #ffb3c9;
+            --accent-dark: #e5527d;
+            --text-light: #707070;
+            --border: #e8e8e8;
+            --green-accent: #7bc96f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            background: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Cursor */
+        body {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="7" fill="rgba(255, 107, 157, 0.4)" stroke="rgba(255, 107, 157, 0.8)" stroke-width="2"/></svg>') 10 10, auto;
+        }
+
+        a, button {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="9" fill="rgba(255, 107, 157, 0.7)" stroke="rgba(255, 107, 157, 1)" stroke-width="2"/></svg>') 12 12, pointer;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.8rem 3.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(180deg, rgba(250, 250, 250, 0.98) 0%, rgba(250, 250, 250, 0) 100%);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(250, 250, 250, 0.96);
+            padding: 1.3rem 3.5rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--primary);
+            animation: fadeInDown 1s ease;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            animation: fadeInDown 1s ease 0.2s backwards;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fafafa 0%, #fff5f8 100%);
+            padding: 6rem 2rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1.2s ease 0.2s backwards;
+            line-height: 1.1;
+        }
+
+        .hero-tagline {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            color: var(--text-light);
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease 0.4s backwards;
+        }
+
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            animation: fadeInUp 1.2s ease 0.6s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.4s ease;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            animation: fadeInUp 1.2s ease 0.8s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-dark);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4);
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.12) 0%, rgba(255, 179, 201, 0.08) 100%);
+            animation: float 25s infinite ease-in-out;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: 5%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 4s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 180px;
+            height: 180px;
+            top: 45%;
+            right: 15%;
+            animation-delay: 8s;
+        }
+
+        .floating-circle:nth-child(4) {
+            width: 300px;
+            height: 300px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 12s;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            animation: fadeInLeft 1s ease;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image-wrapper:hover img {
+            transform: scale(1.08);
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .badge-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .badge-text {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .about-content {
+            animation: fadeInRight 1s ease;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            border: 2px solid var(--border);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.15);
+            border-color: var(--accent-light);
+        }
+
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Video Section - 9:16 Format */
+        .video-section {
+            padding: 8rem 4rem;
+            background: linear-gradient(180deg, #ffffff 0%, #fff5f8 100%);
+        }
+
+        .video-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .video-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .video-section .section-label {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .video-section .section-title {
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            aspect-ratio: 9 / 16;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e5e5e5 100%);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            animation: fadeInUp 1s ease;
+        }
+
+        .video-item:nth-child(1) { animation-delay: 0.1s; }
+        .video-item:nth-child(2) { animation-delay: 0.2s; }
+        .video-item:nth-child(3) { animation-delay: 0.3s; }
+        .video-item:nth-child(4) { animation-delay: 0.4s; }
+        .video-item:nth-child(5) { animation-delay: 0.5s; }
+        .video-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .video-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(255, 107, 157, 0.25);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .video-item:hover .video-thumbnail {
+            transform: scale(1.1);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem 1.5rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .video-item:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .video-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-description {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 107, 157, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 18px solid white;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            margin-left: 4px;
+        }
+
+        .video-item:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.15);
+            background: var(--accent);
+        }
+
+        .video-instagram-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 4rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .gallery .section-label {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 500px;
+            animation: fadeInUp 1s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease, filter 0.4s ease;
+            filter: brightness(0.95);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.12);
+            filter: brightness(1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 107, 157, 0) 0%, rgba(255, 107, 157, 0.95) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 4rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 65px;
+            height: 65px;
+            background: white;
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 1.3rem 3.5rem;
+            background: white;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.4s ease;
+            border: 3px solid white;
+            border-radius: 50px;
+        }
+
+        .contact-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-40px) rotate(180deg);
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .about {
+                gap: 4rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.2rem 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.7rem;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem;
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: -1px;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                margin-bottom: 2.5rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 0.8rem;
+            }
+
+            .floating-circle {
+                opacity: 0.5;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 4rem 1.5rem;
+            }
+
+            .about-image img {
+                height: 500px;
+            }
+
+            .image-badge {
+                bottom: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+            }
+
+            .badge-number {
+                font-size: 2rem;
+            }
+
+            .section-label {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about-text {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.3rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .video-section {
+                padding: 5rem 1.5rem;
+            }
+
+            .video-header {
+                margin-bottom: 3rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .video-instagram-badge {
+                top: 15px;
+                right: 15px;
+                padding: 0.5rem 0.8rem;
+                font-size: 0.65rem;
+            }
+
+            .play-button {
+                width: 60px;
+                height: 60px;
+            }
+
+            .play-button::after {
+                border-left: 15px solid white;
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+            }
+
+            .video-title {
+                font-size: 1.1rem;
+            }
+
+            .video-description {
+                font-size: 0.75rem;
+            }
+
+            .gallery {
+                padding: 5rem 1.5rem;
+            }
+
+            .gallery-header {
+                margin-bottom: 3rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-item {
+                height: 450px;
+            }
+
+            .gallery-caption {
+                font-size: 1.2rem;
+            }
+
+            .contact {
+                padding: 5rem 1.5rem;
+            }
+
+            .contact-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .social-links {
+                gap: 1.2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .social-link {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .contact-button {
+                padding: 1.1rem 2.8rem;
+                font-size: 0.85rem;
+            }
+
+            footer {
+                padding: 2.5rem 1.5rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                gap: 0.8rem;
+                margin-top: 0.8rem;
+            }
+
+            .nav-links a {
+                font-size: 0.65rem;
+                padding: 0.3rem 0.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+
+            .about {
+                padding: 3rem 1rem;
+                gap: 2.5rem;
+            }
+
+            .about-image img {
+                height: 450px;
+            }
+
+            .image-badge {
+                bottom: 15px;
+                right: 15px;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .badge-number {
+                font-size: 1.8rem;
+            }
+
+            .badge-text {
+                font-size: 0.7rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-text {
+                font-size: 0.95rem;
+            }
+
+            .stats {
+                margin-top: 2rem;
+            }
+
+            .video-section {
+                padding: 4rem 1rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .video-item {
+                border-radius: 20px;
+            }
+
+            .video-instagram-badge {
+                top: 12px;
+                right: 12px;
+                padding: 0.4rem 0.7rem;
+                font-size: 0.6rem;
+                border-radius: 15px;
+            }
+
+            .play-button {
+                width: 55px;
+                height: 55px;
+            }
+
+            .play-button::after {
+                border-left: 13px solid white;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+            }
+
+            .video-overlay {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .video-title {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .video-description {
+                font-size: 0.7rem;
+            }
+
+            .gallery {
+                padding: 4rem 1rem;
+            }
+
+            .gallery-item {
+                height: 400px;
+                border-radius: 15px;
+            }
+
+            .gallery-overlay {
+                padding: 1.5rem;
+            }
+
+            .gallery-caption {
+                font-size: 1.1rem;
+            }
+
+            .contact {
+                padding: 4rem 1rem;
+            }
+
+            .contact .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+            }
+
+            .contact-button {
+                padding: 1rem 2.3rem;
+                font-size: 0.8rem;
+            }
+
+            footer {
+                padding: 2rem 1rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Very small mobile devices */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .video-grid {
+                max-width: 300px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .video-overlay,
+            .gallery-overlay {
+                opacity: 1;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+            }
+
+            .video-item:active,
+            .gallery-item:active {
+                transform: scale(0.98);
+            }
+
+            .cta-button:active,
+            .contact-button:active {
+                transform: scale(0.95);
+            }
+
+            .social-link:active {
+                transform: scale(0.9);
+            }
+
+            .nav-links a {
+                padding: 0.5rem;
+                min-width: 44px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .social-link {
+                min-width: 55px;
+                min-height: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">EMMA<span>KATJA</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+        </div>
+        <div class="hero-content">
+            <h1>EMMA KATJA</h1>
+            <p class="hero-tagline">Living life authentically, one moment at a time</p>
+            <p class="hero-subtitle">Lifestyle • Beauty • Travel • Inspiration</p>
+            <a href="#contact" class="cta-button">Let's Collaborate</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about reveal" id="about">
+        <div class="about-image">
+            <div class="about-image-wrapper">
+                <img src="./459588210_439296019162478_3446803628160972732_n.jpg" alt="Emma Katja">
+                <div class="image-badge">
+                    <div class="badge-number">1.2K+</div>
+                    <div class="badge-text">Followers</div>
+                </div>
+            </div>
+        </div>
+        <div class="about-content">
+            <div class="section-label">Get to Know Me</div>
+            <h2 class="section-title">Creating Content That Inspires</h2>
+            <p class="about-text">
+                Hi, I'm Emma Katja! I'm a content creator passionate about sharing the beauty in everyday moments. From <span class="highlight-text">lifestyle adventures</span> to <span class="highlight-text">beauty discoveries</span>, I love connecting with my community through authentic storytelling.
+            </p>
+            <p class="about-text">
+                My mission is simple: inspire you to embrace your unique journey, celebrate life's little joys, and discover confidence in your own skin. Whether it's fashion inspiration, travel vlogs, or honest conversations, I'm here to create content that resonates with real life.
+            </p>
+            <p class="about-text">
+                Join me as we explore this beautiful adventure together! ✨
+            </p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">1.2K+</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Partnerships</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section - 9:16 Vertical Format -->
+    <section class="video-section reveal" id="videos">
+        <div class="video-container">
+            <div class="video-header">
+                <div class="section-label">Watch My Content</div>
+                <h2 class="section-title">Latest Videos</h2>
+            </div>
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <img class="video-thumbnail" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=700&fit=crop" alt="Fashion Video">
+                    <div class="video-instagram-badge">📷 Instagram</div>
+                    <div class="play-button"></div>
+                    <div class="video-overlay">
+                        <div class="video-title">Everyday Style Tips</div>
+                        <div class="video-description">Quick fashion hacks for effortless looks</div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <img class="video-thumbnail" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=700&fit=crop" alt="Makeup Tutorial">
+                    <div class="video-instagram-badge">📷 Instagram</div>
+                    <div class="play-button"></div>
+                    <div class="video-overlay">
+                        <div class="video-title">Natural Glam Makeup</div>
+                        <div class="video-description">My go-to everyday makeup routine</div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-item">
+                    <img class="video-thumbnail" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=700&fit=crop" alt="Travel Content">
+                    <div class="video-instagram-badge">📷 Instagram</div>
+                    <div class="play-button"></div>
+                    <div class="video-overlay">
+                        <div class="video-title">Travel Diaries</div>
+                        <div class="video-description">Exploring beautiful destinations</div>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-item">
+                    <img class="video-thumbnail" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=700&fit=crop" alt="Lifestyle Vlog">
+                    <div class="video-instagram-badge">📷 Instagram</div>
+                    <div class="play-button"></div>
+                    <div class="video-overlay">
+                        <div class="video-title">Day In My Life</div>
+                        <div class="video-description">Behind the scenes of my daily routine</div>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-item">
+                    <img class="video-thumbnail" src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=700&fit=crop" alt="Selfcare Content">
+                    <div class="video-instagram-badge">📷 Instagram</div>
+                    <div class="play-button"></div>
+                    <div class="video-overlay">
+                        <div class="video-title">Self-Care Sunday</div>
+                        <div class="video-description">Wellness and beauty rituals</div>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-item">
+                    <img class="video-thumbnail" src="https://images.unsplash.com/photo-1487260211189-670c54da558d?w=400&h=700&fit=crop" alt="Q&A Video">
+                    <div class="video-instagram-badge">📷 Instagram</div>
+                    <div class="play-button"></div>
+                    <div class="video-overlay">
+                        <div class="video-title">Q&A with You</div>
+                        <div class="video-description">Answering your burning questions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery reveal" id="gallery">
+        <div class="gallery-header">
+            <div class="section-label">My Portfolio</div>
+            <h2 class="section-title">Gallery Highlights</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=800&fit=crop" alt="Fashion Photo">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Fashion & Style</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=800&fit=crop" alt="Urban Style">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">City Vibes</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1496449903678-68ddcb189a24?w=600&h=800&fit=crop" alt="Travel Photo">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Travel Adventures</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?w=600&h=800&fit=crop" alt="Nature Photo">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Natural Beauty</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop" alt="Portrait">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Studio Sessions</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1515077678510-ce3bdf418862?w=600&h=800&fit=crop" alt="Lifestyle">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Lifestyle Moments</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact reveal" id="contact">
+        <h2 class="section-title">Let's Connect!</h2>
+        <p class="contact-subtitle">
+            Want to collaborate or just say hi? I'd love to hear from you! Drop me a message on Instagram or send an email.
+        </p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/emmakatja_/" target="_blank" class="social-link" title="Instagram">📷</a>
+            <a href="mailto:hello@emmakatja.com" class="social-link" title="Email">✉️</a>
+            <a href="#" class="social-link" title="TikTok">🎵</a>
+            <a href="#" class="social-link" title="YouTube">🎬</a>
+        </div>
+        <a href="mailto:hello@emmakatja.com" class="contact-button">Get In Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Emma Katja. All Rights Reserved. | Follow <a href="https://www.instagram.com/emmakatja_/" target="_blank">@emmakatja_</a> on Instagram ✨</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Video click handlers
+        document.querySelectorAll('.video-item').forEach(item => {
+            item.addEventListener('click', function() {
+                window.open('https://www.instagram.com/emmakatja_/', '_blank');
+            });
+        });
+
+        // Gallery click effect
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.97)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+
+        // Parallax floating circles
+        window.addEventListener('scroll', () => {
+            const circles = document.querySelectorAll('.floating-circle');
+            const scrolled = window.pageYOffset;
+            circles.forEach((circle, index) => {
+                const speed = 0.3 + (index * 0.1);
+                circle.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.05}deg)`;
+            });
+        });
+
+        // Add hover pulse effect to stats
+        document.querySelectorAll('.stat-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.querySelector('.stat-number').style.transform = 'scale(1.1)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.querySelector('.stat-number').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
